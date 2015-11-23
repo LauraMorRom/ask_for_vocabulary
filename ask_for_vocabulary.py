@@ -3,14 +3,18 @@
 
 #El fichero de texto de vocabulario que se le pasa tiene que tener esta estructura: palabra en valenciano+tabulador+palabra en castellano
 
-print "Benvingut al assistent que pregunta vocabulari."
-f=file("vocabulary.txt", "r")
-content=f.read().splitlines()
+import codecs
 
-list_of_pairs=[]
-for line in content:
-	pairs=line.split("\t")
-	list_of_pairs.append(pairs)
+print "Benvingut al assistent que pregunta vocabulari."
+filename = 'vocabulary.txt'
+
+list_of_pairs = []
+with codecs.open(filename, 'r', 'utf-8') as f:
+    for line in f.readlines():
+        pairs = line.split("\t")
+	pairs = (pairs[0].strip(), pairs[1].strip())
+        list_of_pairs.append(pairs)
+print(list_of_pairs)
 
 def choose_random_line(list):
 	import random
