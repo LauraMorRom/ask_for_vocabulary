@@ -22,59 +22,60 @@ def choose_random_line(list):
 	return random_line
 	
 #pedir lengua en que desea que le pregunten
-language=raw_input('En quina llengua vols que et pregunte? Escriu C per a castella i V per a valencia: ')
+language=raw_input(u'En quina llengua vols que et pregunte? Escriu C per a castella i V per a valencia: ')
 while language!="C" and language!="V":
-	print "Escriu un caracter valid, per favor: C o V"
-	language=raw_input('En quina llengua vols que et pregunte? Escriu C per a castella i V per a valencia: ')
+	print u"Escriu un caracter valid, per favor: C o V"
+	language=raw_input(u'En quina llengua vols que et pregunte? Escriu C per a castella i V per a valencia: ')
 
 user_answer=""
-while language=="C" and user_answer!="Adeu siau":
-	print "Quan vulgues aturar el programa, escriu 'Adeu siau'."
+while language=="C" and user_answer!=u"Adeu siau":
+	print u"Quan vulgues aturar el programa, escriu 'Adeu siau'."
 	random_line = choose_random_line(list_of_pairs)
 	question=random_line[1]
 	answer=random_line[0]
-	user_answer=raw_input('Com es diu en valencia '+question+'? ')
+	user_answer=raw_input(u'Com es diu en valencia ' + question + u'? ')
 
 	if user_answer==answer:
-		print "Resposta correcta!"
+		print u"Resposta correcta!"
 	else:
-		if user_answer=="Adeu siau":
-			print "Fins a la proxima!"
+		if user_answer==u"Adeu siau":
+			print u"Fins a la proxima!"
 		else:
 			for turn in range(1,4):
 				if turn>=3:
-					print "La resposta correcta era: "+answer+"."
+					print u"La resposta correcta era: " + answer + u"."
 				else:
-					print "Resposta incorrecta. Tens tres oportunitats per encertar"
-					user_answer=raw_input('Com es diu en valencia '+question+'? ')
+					print u"Resposta incorrecta. Tens tres oportunitats per encertar"
+					user_answer=raw_input(u'Com es diu en valencia ' + question + u'? ')
 					if user_answer==answer:
-						print "Resposta correcta!"
+						print u"Resposta correcta!"
 						break
 				turn=turn+1
 		
 
 #if valencia
 
-while language=="V" and user_answer!="Adeu siau":
-	print "Quan vulgues aturar el programa, escriu 'Adeu siau'."
+while language==u"V" and user_answer!=u"Adeu siau":
+	print u"Quan vulgues aturar el programa, escriu 'Adeu siau'."
 	random_line = choose_random_line(list_of_pairs)
 	question=random_line[0]
 	answer=random_line[1]
-	user_answer=raw_input('Com es diu en castella '+question+'? ')
+	user_answer=raw_input(u'Com es diu en castella ' + question + u'? ')
 
 	if user_answer==answer:
-		print "Resposta correcta!"
+		print u"Resposta correcta!"
 	else:
-		if user_answer=="Adeu siau":
-			print "Fins a la proxima!"
+		if user_answer==u"Adeu siau":
+			print u"Fins a la proxima!"
 		else:
 			for turn in range(1,4):
 				if turn>=3:
-					print "La resposta correcta era: "+answer+"."
+					print u"La resposta correcta era: " + answer + u"."
 				else:
-					print "Resposta incorrecta. Tens tres oportunitats per encertar"
-					user_answer=raw_input('Com es diu en castella '+question+'? ')
+					print u"Resposta incorrecta. Tens tres oportunitats per encertar"
+					user_answer=raw_input(u'Com es diu en castella ' + question + u'? ')
 					if user_answer==answer:
-						print "Resposta correcta!"
+						print u"Resposta correcta!"
 						break
 				turn=turn+1
+
