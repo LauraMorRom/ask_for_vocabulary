@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
 #El fichero de texto de vocabulario que se le pasa tiene que tener esta estructura: palabra en valenciano+tabulador+palabra en castellano
 
 print "Benvingut al assistent que pregunta vocabulari."
